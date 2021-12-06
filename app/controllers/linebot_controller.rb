@@ -27,14 +27,14 @@ class LinebotController < ApplicationController
     events.each { |event|
 
       # event.message['text']でLINEで送られてきた文書を取得
-      if event.message['text'].include?("好き")
-        response = "んほぉぉぉぉぉぉ！すきすきすきすきすきすきすきすきぃぃぃぃぃ"
+      if event.message['text'].include?("仕事終わった")
+        response = "お疲れ！！"
       elsif event.message["text"].include?("行ってきます")
-        response = "どこいくの？どこいくの？どこいくの？寂しい寂しい寂しい。。。"
+        response = "どこいくの？"
       elsif event.message['text'].include?("おはよう")
-        response = "おはよう。なんで今まで連絡くれなかったの？"
-      elsif event.message['text'].include?("みーくん")
-        response = "みーくん！？" * 50
+        response = "おはよう。"
+      elsif event.message['text'].include?("おい")
+        response = "はい！？" * 50
       else
         response = @post.name
       end
